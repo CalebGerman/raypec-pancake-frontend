@@ -1,0 +1,24 @@
+.summary-component {
+  background: #333333;
+  color: #FFFF;
+ padding-bottom: 5rem; /* Adjust the value to match the height of your Navbar */
+}
+
+.text-block {
+  margin-right: 20px;
+}
+
+@media (max-width: 767px) {
+  .h1-md {
+    font-size: 2.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+}
+
+@media (max-width: 767px) {
+  .responsive-img {
+    height: 200px;
+    object-fit: cover; // This line ensures that your images are scaled correctly
+  }
+}

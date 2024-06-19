@@ -1,0 +1,9 @@
+.recipe-form {
+  background: #212529;
+  color: #FFFF;
+ padding-bottom: 5rem; /* Adjust the value to match the height of your Navbar */
+}
+
+.invalid-input {
+  color: #f10303;
+}

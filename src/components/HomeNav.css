@@ -1,0 +1,9 @@
+.navbar-background {
+   background: linear-gradient(to bottom, #000000, #000000);
+   height: 100px;
+}
+
+.brand-container {
+  display: flex;
+  align-items: center;
+}
