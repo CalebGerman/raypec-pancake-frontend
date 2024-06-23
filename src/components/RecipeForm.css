@@ -7,3 +7,20 @@
 .invalid-input {
   color: #f10303;
 }
+
+.recipe-output {
+  background-color: #F0EAD6; /* Eggshell white */
+  color: #000000; /* Black text */
+  border: 2px solid #000000; /* Black border */
+  padding: 20px; /* Some padding */
+}
+
+.recipe-container {
+  position: relative;
+}
+
+.recipe-clear-btn {
+  position: absolute;
+  right:0;
+  bottom: -45px;
+}
