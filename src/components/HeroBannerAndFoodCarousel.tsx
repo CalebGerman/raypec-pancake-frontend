@@ -34,6 +34,7 @@ function HeroBannerAndFoodCarousel() {
                 <img
                   className="d-block w-100 responsive-img"
                   height={400}
+                  width={"100%"}
                   src={pancakes} // replace with the path to your image
                   alt="First slide"
                 />
@@ -42,6 +43,7 @@ function HeroBannerAndFoodCarousel() {
                 <img
                   className="d-block w-100 responsive-img"
                   height={400}
+                  width={"100%"}
                   src={recpark} // replace with the path to your image
                   alt="Second slide"
                 />

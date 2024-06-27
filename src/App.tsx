@@ -9,7 +9,7 @@ function App() {
   return (
     <div
       className="home-theme"
-      style={{ backgroundColor: "black", height: "100vh" }}
+      style={{ backgroundColor: "black", height: "100vh", width: "100vw" }}
     >
       <HomeNav />
       <Container fluid className="mt-75 w-100">

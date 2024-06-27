@@ -4,8 +4,8 @@ import { useState } from "react";
 import DOMPurify from "dompurify";
 
 function RecipeForm() {
-  const maxPancakes = 1000;
-  const [pancakes, setPancakes] = useState<number | undefined>(0);
+  const maxPancakes = 1002;
+  const [pancakes, setPancakes] = useState<number | undefined>(6);
   const [submitted, setSubmitted] = useState<boolean>(false);
   const [data, setData] = useState<string>(""); // [
   const [isValid, setIsValid] = useState<boolean>(true);
@@ -21,25 +21,29 @@ function RecipeForm() {
 
     const handleClear = () => {
       setData("");
-      setPancakes(0);
+      setPancakes(6);
       setSubmitted(false);
     };
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event?.target?.value && !isNaN(Number(event.target.value))) {
-      if (Number(event.target.value) <= maxPancakes) {
-        setPancakes(event.target.value as unknown as number);
+      const value = Number(event.target.value);
+      if (value <= maxPancakes) {
+        if (value < 6) {
+          setIsValid(true);
+          setPancakes(6);
+          return;
+        }
+        const closestIncrementOfSix = Math.ceil(value / 6) * 6;
+        setPancakes(closestIncrementOfSix <= maxPancakes ? closestIncrementOfSix : maxPancakes);
       } else {
         setPancakes(maxPancakes);
       }
+      setIsValid(true);
       return;
     }
-    if (event?.target?.value === "") {
-      setPancakes(undefined);
-    } else if (isNaN(Number(event.target.value))) {
-      setIsValid(false);
-    }
-    setIsValid(true);
+    setIsValid(false);
+    setPancakes(undefined);
   };
   const btnInternalLoading = () => {
     return (
@@ -68,6 +72,7 @@ function RecipeForm() {
                 <Form.Range
                   disabled={submitted}
                   max={maxPancakes}
+                  min={6}
                   value={pancakes}
                   id="PancakeRange"
                   onChange={handleInputChange}
