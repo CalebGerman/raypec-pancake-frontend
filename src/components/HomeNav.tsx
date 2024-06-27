@@ -27,13 +27,6 @@ function HomeNav() {
         >
           <Nav className="pe-3">
             <Nav.Link
-              href="https://www.raypec.k12.mo.us/o/rphs"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              About RP
-            </Nav.Link>
-            <Nav.Link
               href="https://www.raypec.org/o/rphs/page/high-school-xc-team"
               target="_blank"
               rel="noopener noreferrer"
